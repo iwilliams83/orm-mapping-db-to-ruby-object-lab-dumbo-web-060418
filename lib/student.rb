@@ -74,7 +74,7 @@ class Student
     SQL
 
     DB[:conn].execute(sql).map do |row|
-      row[1]
+      puts row
     end
   end
 end
