@@ -73,8 +73,11 @@ class Student
       SELECT * FROM students WHERE grade < 12
     SQL
 
+    arr = []
+
     DB[:conn].execute(sql).map do |row|
-      puts row
+      arr << row[1]
     end
+    return arr 
   end
 end
