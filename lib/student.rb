@@ -73,11 +73,9 @@ class Student
       SELECT * FROM students WHERE grade < 12
     SQL
 
-    arr = []
-
     DB[:conn].execute(sql).map do |row|
-      arr << row[1]
+      self.new_from_db(row)
     end
-    return arr 
+
   end
 end
